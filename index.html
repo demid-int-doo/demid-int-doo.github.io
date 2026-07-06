@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DemID Int.DOO — non-ferrous metal & ferroalloy supplies</title>
+    <title>DemID Int.DOO — Non-Ferrous metal & Ferroalloy supplies</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
         }
 
         body {
-            background-color: #f8f9fa;
+            background-color: #0b1a2e;
             color: #1e1e2a;
             line-height: 1.6;
         }
@@ -247,6 +247,75 @@
             color: #f1c40f;
         }
 
+        /* ========== PRODUCT CARDS ========== */
+        .products-section {
+            background: #0b1a2e;
+            padding: 80px 0;
+        }
+
+        .products-section h2 {
+            color: white;
+        }
+
+        .products-section .subtitle {
+            color: #aaa;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+        }
+
+        .product-card h3 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #0b1a2e;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .product-card .image-wrapper {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            background: #e0e0e0;
+        }
+
+        .product-card .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-card p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+            margin-top: 4px;
+            flex-grow: 1;
+        }
+
+        /* ========== MOBILE ========== */
         @media (max-width: 768px) {
             .header .container {
                 flex-direction: column;
@@ -282,30 +351,47 @@
             .contact-info {
                 padding: 25px;
             }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .product-card {
+                padding: 20px;
+            }
+
+            .product-card h3 {
+                font-size: 22px;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- HEADER -->
     <header class="header">
         <div class="container">
             <div class="logo">DemID <span>Int.DOO</span></div>
             <nav class="nav">
                 <a href="#about">About</a>
+                <a href="#products">Products</a>
                 <a href="#markets">Markets</a>
                 <a href="#contacts">Contact</a>
             </nav>
         </div>
     </header>
 
+    <!-- HERO -->
     <section class="hero">
         <div class="container">
-            <h1>Reliable supply of <span>non-ferrous metals</span> & ferroalloys</h1>
+            <h1>Reliable supply of <span>Non-Ferrous metals</span> & Ferroalloys</h1>
             <p>From Serbia to the world — trusted partners in Uzbekistan, Serbia, Kazakhstan, and India.</p>
             <a href="#contacts" class="btn">Get in touch</a>
         </div>
     </section>
 
+    <!-- ABOUT -->
     <section class="section" id="about">
         <div class="container">
             <h2>About the company</h2>
@@ -318,7 +404,7 @@
                     <p style="margin-top:16px; font-style:italic; color:#0b1a2e;">At DemID Int.DOO, we don't just trade metals — we build long-term partnerships based on integrity and results.</p>
                 </div>
                 <div class="badge">
-                    <h3>🇷🇸 Founded in</h3>
+                    <h3>Founded in</h3>
                     <span class="year">2025</span>
                     <p style="font-size:17px; margin-top:8px;">
                         Young, dynamic, and already trusted by partners across 4 countries.
@@ -328,15 +414,51 @@
         </div>
     </section>
 
+    <!-- PRODUCTS (карточки) -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <h2>Our products</h2>
+            <p class="subtitle">What we offer</p>
+            <div class="products-grid">
+                <!-- Карточка 1: Цветные металлы -->
+                <div class="product-card">
+                    <h3>Non-ferrous metals</h3>
+                    <div class="image-wrapper">
+                        <img
+                            src="https://cdn.leonardo.ai/users/6543f188-6a1d-4bce-aa99-9ed4f0994247/generations/1f1793e9-69ea-6a70-ab99-7fa351ff0fb3/lucid-origin_A_massive_stack_of_shiny_silver_metal_ingots_arranged_neatly_on_a_wooden_pallet_-0.jpg"
+                            alt="Non-ferrous metals — silver ingots"
+                            loading="lazy"
+                        />
+                    </div>
+                    <p>We offer wholesale supplies of lead, zinc, and tin. Upon request, we can arrange delivery of other types of non-ferrous metals.</p>
+                </div>
+
+                <!-- Карточка 2: Ферросплавы -->
+                <div class="product-card">
+                    <h3>Ferroalloys</h3>
+                    <div class="image-wrapper">
+                        <img
+                            src="https://cdn.leonardo.ai/users/6543f188-6a1d-4bce-aa99-9ed4f0994247/generations/1f1793ef-9ea4-6850-b5c7-27ad4e170dab/lucid-origin_A_large_industrial_pile_of_dark_grey_and_black_ferroalloy_lumps_jagged_and_irreg-0.jpg"
+                            alt="Ferroalloys — industrial pile"
+                            loading="lazy"
+                        />
+                    </div>
+                    <p>We supply high-quality ferroalloys for the metallurgical industry: ferrosilicon, ferromanganese, ferrochrome. We ensure stable volumes and consistent quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARKETS -->
     <section class="section" id="markets" style="background:#f1f4f8;">
         <div class="container">
             <h2>Our markets</h2>
             <p class="subtitle">Where we ship our products</p>
             <div class="countries">
-                <span class="country-item">🇺🇿 Uzbekistan</span>
-                <span class="country-item">🇷🇸 Serbia</span>
-                <span class="country-item">🇰🇿 Kazakhstan</span>
-                <span class="country-item">🇮🇳 India</span>
+                <span class="country-item">Uzbekistan</span>
+                <span class="country-item">Serbia</span>
+                <span class="country-item">Kazakhstan</span>
+                <span class="country-item">India</span>
             </div>
             <p style="text-align:center; margin-top:40px; font-size:17px; color:#444;">
                 We are actively expanding into new regions. If you are looking for a reliable partner — let's talk.
@@ -344,22 +466,24 @@
         </div>
     </section>
 
+    <!-- CONTACTS -->
     <section class="section" id="contacts">
         <div class="container">
             <h2>Contact us</h2>
             <p class="subtitle">We are open to dialogue and new partnerships</p>
             <div class="contact-info">
-                <p><span class="flag">🇷🇸</span> <strong>Registered address:</strong> Studentski trg 4/7, Beograd (Stari Grad), Serbia</p>
+                <p><span class="flag"></span> <strong>Registered address:</strong> Studentski trg 4/7, Beograd (Stari Grad), Serbia</p>
                 <p><strong>PIB (Serbian Tax ID):</strong> 115015326</p>
                 <p><strong>📞 Phone:</strong> <a href="tel:+381638424900">+381 63 842 4900</a></p>
-                <p><strong>✉️ Email:</strong> <a href="mailto:info@demid.rs">info@demid.rs</a></p>
+                <p><strong>✉️ Email:</strong> <a href="mailto:info@demid.rs">aev@demid.de</a></p>
                 <p style="margin-top:20px; font-size:15px; opacity:0.8;">
-                    * Office is owned, warehouse space is leased.
+                    
                 </p>
             </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <p>© 2026 <span>DemID Int.DOO</span> — All rights reserved.</p>
