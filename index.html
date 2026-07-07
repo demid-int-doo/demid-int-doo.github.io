@@ -14,10 +14,11 @@
         }
 
         body {
-            background-color: #0b1a2e;
+            background: #0b1a2e;
             color: #e8e8e8;
             line-height: 1.7;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         .container {
@@ -26,33 +27,28 @@
             padding: 0 24px;
         }
 
-        /* ========== АНИМАЦИИ ========== */
-        @keyframes fadeUp {
-            0% { opacity: 0; transform: translateY(40px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate {
+        /* ========== АНИМАЦИЯ ПРИ СКРОЛЛЕ ========== */
+        .scroll-animate {
             opacity: 0;
-            animation: fadeUp 0.8s ease forwards;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-        .animate-delay-1 { animation-delay: 0.1s; }
-        .animate-delay-2 { animation-delay: 0.2s; }
-        .animate-delay-3 { animation-delay: 0.3s; }
-        .animate-delay-4 { animation-delay: 0.4s; }
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* ========== ШАПКА ========== */
         .header {
-            background: rgba(11, 26, 46, 0.92);
-            backdrop-filter: blur(6px);
+            background: rgba(11, 26, 46, 0.88);
+            backdrop-filter: blur(8px);
             color: white;
             padding: 18px 0;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid rgba(241, 196, 15, 0.15);
+            border-bottom: 1px solid rgba(255, 180, 50, 0.15);
         }
 
         .header .container {
@@ -66,11 +62,14 @@
             font-size: 26px;
             font-weight: 700;
             letter-spacing: 1px;
-            color: #f1c40f;
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .logo span {
-            color: white;
+            background: none;
+            -webkit-text-fill-color: white;
             font-weight: 300;
         }
 
@@ -81,7 +80,6 @@
             font-size: 15px;
             font-weight: 500;
             transition: 0.3s;
-            letter-spacing: 0.3px;
             border-bottom: 2px solid transparent;
             padding-bottom: 6px;
         }
@@ -93,10 +91,10 @@
 
         /* ========== ГЕРОЙ ========== */
         .hero {
-            padding: 100px 0 80px;
+            padding: 110px 0 80px;
             text-align: center;
-            background: linear-gradient(145deg, #0b1a2e 0%, #132a44 100%);
-            border-bottom: 1px solid rgba(241, 196, 15, 0.08);
+            background: linear-gradient(160deg, #0b1a2e 0%, #1a0e2e 50%, #0b1a2e 100%);
+            border-bottom: 1px solid rgba(255, 180, 50, 0.08);
         }
 
         .hero h1 {
@@ -107,8 +105,9 @@
         }
 
         .hero h1 span {
-            color: #f1c40f;
-            font-weight: 300;
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
@@ -122,32 +121,30 @@
 
         .btn {
             display: inline-block;
-            background: transparent;
-            color: #f1c40f;
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            color: #0b1a2e;
             padding: 14px 44px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 16px;
             border-radius: 50px;
             text-decoration: none;
             transition: 0.4s;
-            border: 1.5px solid #f1c40f;
+            border: none;
             letter-spacing: 0.5px;
-            box-shadow: 0 0 20px rgba(241, 196, 15, 0.08);
+            box-shadow: 0 0 30px rgba(241, 196, 15, 0.2);
         }
 
         .btn:hover {
-            background: #f1c40f;
-            color: #0b1a2e;
-            box-shadow: 0 10px 30px rgba(241, 196, 15, 0.25);
-            transform: translateY(-3px);
+            transform: scale(1.04) translateY(-3px);
+            box-shadow: 0 10px 40px rgba(241, 196, 15, 0.4);
         }
 
-        /* ========== СТАТИСТИКА (НОВЫЙ БЛОК) ========== */
+        /* ========== СТАТИСТИКА ========== */
         .stats {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.02);
             padding: 50px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
         }
 
         .stats-grid {
@@ -158,16 +155,18 @@
         }
 
         .stat-item h3 {
-            font-size: 38px;
+            font-size: 42px;
             font-weight: 700;
-            color: #f1c40f;
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             letter-spacing: 1px;
         }
 
         .stat-item p {
             font-size: 15px;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
+            letter-spacing: 1.5px;
             color: #a0abb8;
             margin-top: 6px;
             font-weight: 400;
@@ -176,11 +175,11 @@
         /* ========== О НАС ========== */
         .section {
             padding: 90px 0;
-            background: #0f1f33;
+            background: rgba(11, 26, 46, 0.7);
         }
 
         .section:nth-child(even) {
-            background: #0b1a2e;
+            background: rgba(20, 10, 40, 0.6);
         }
 
         .section h2 {
@@ -193,8 +192,16 @@
         }
 
         .section h2 span {
-            color: #f1c40f;
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-weight: 600;
+        }
+
+        .section h2 .white-word {
+            background: none;
+            -webkit-text-fill-color: white;
+            font-weight: 300;
         }
 
         .section .subtitle {
@@ -220,7 +227,9 @@
         }
 
         .about-text strong {
-            color: #f1c40f;
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-weight: 600;
         }
 
@@ -230,26 +239,34 @@
 
         .about-text .highlight {
             font-style: italic;
-            color: #f1c40f;
-            border-left: 3px solid #f1c40f;
+            border-left: 3px solid #e67e22;
             padding-left: 20px;
             font-weight: 400;
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .badge {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 180, 50, 0.15);
             padding: 40px 30px;
-            border-radius: 16px;
+            border-radius: 20px;
             text-align: center;
             backdrop-filter: blur(4px);
+            transition: 0.4s;
+        }
+
+        .badge:hover {
+            border-color: #f1c40f;
+            box-shadow: 0 0 40px rgba(241, 196, 15, 0.08);
         }
 
         .badge h3 {
-            color: #f1c40f;
             font-size: 22px;
             font-weight: 300;
             letter-spacing: 1px;
+            color: #f1c40f;
         }
 
         .badge .year {
@@ -266,18 +283,10 @@
             font-weight: 300;
         }
 
-        /* ========== ПРОДУКТЫ (КАРТОЧКИ) ========== */
+        /* ========== ПРОДУКТЫ ========== */
         .products-section {
-            background: #0b1a2e;
+            background: rgba(11, 26, 46, 0.9);
             padding: 90px 0;
-        }
-
-        .products-section h2 {
-            color: white;
-        }
-
-        .products-section .subtitle {
-            color: #9aa7b5;
         }
 
         .products-grid {
@@ -288,42 +297,59 @@
         }
 
         .product-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 20px;
+            border-radius: 24px;
             padding: 32px 28px;
-            transition: 0.4s ease;
+            transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             backdrop-filter: blur(4px);
+            transform-style: preserve-3d;
+            perspective: 800px;
         }
 
-        .product-card:hover {
+        .product-card.metals {
+            background: linear-gradient(145deg, rgba(241, 196, 15, 0.12), rgba(230, 126, 34, 0.08));
+            border: 1px solid rgba(241, 196, 15, 0.2);
+        }
+
+        .product-card.metals:hover {
+            border-color: #f1c40f;
+            box-shadow: 0 20px 50px rgba(241, 196, 15, 0.12), inset 0 0 80px rgba(241, 196, 15, 0.02);
             transform: translateY(-8px);
-            border-color: rgba(241, 196, 15, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            background: rgba(255, 255, 255, 0.07);
         }
 
-        .product-card .icon {
-            font-size: 32px;
-            color: #f1c40f;
-            margin-bottom: 10px;
-            display: block;
+        .product-card.ferroalloys {
+            background: linear-gradient(145deg, rgba(241, 196, 15, 0.08), rgba(230, 126, 34, 0.05));
+            border: 1px solid rgba(241, 196, 15, 0.15);
+        }
+
+        .product-card.ferroalloys:hover {
+            border-color: #f1c40f;
+            box-shadow: 0 20px 50px rgba(241, 196, 15, 0.1), inset 0 0 80px rgba(241, 196, 15, 0.02);
+            transform: translateY(-8px);
         }
 
         .product-card h3 {
             font-size: 24px;
             font-weight: 600;
             color: white;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
+            letter-spacing: 0.3px;
+        }
+
+        .product-card.metals h3,
+        .product-card.ferroalloys h3 {
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .product-card .image-wrapper {
             width: 100%;
             aspect-ratio: 4 / 3;
             overflow: hidden;
-            border-radius: 12px;
+            border-radius: 14px;
             margin: 12px 0 16px;
-            background: #1a2f44;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.04);
         }
 
         .product-card .image-wrapper img {
@@ -331,11 +357,11 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: 0.6s ease;
+            transition: 0.8s ease;
         }
 
         .product-card:hover .image-wrapper img {
-            transform: scale(1.03);
+            transform: scale(1.04);
         }
 
         .product-card p {
@@ -354,21 +380,24 @@
         }
 
         .country-item {
-            background: rgba(255, 255, 255, 0.06);
-            color: #e0e6ed;
-            padding: 10px 28px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #e8eef5;
+            padding: 12px 30px;
             border-radius: 40px;
-            font-weight: 400;
+            font-weight: 500;
             font-size: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            transition: 0.3s;
+            border: 1.5px solid rgba(241, 196, 15, 0.25);
+            transition: 0.4s;
             letter-spacing: 0.3px;
+            cursor: default;
         }
 
         .country-item:hover {
-            background: rgba(241, 196, 15, 0.12);
+            background: rgba(241, 196, 15, 0.15);
             border-color: #f1c40f;
             color: #f1c40f;
+            transform: scale(1.04);
+            box-shadow: 0 0 25px rgba(241, 196, 15, 0.08);
         }
 
         .markets-group {
@@ -387,18 +416,23 @@
             font-weight: 400;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            border-bottom: 1px solid rgba(241, 196, 15, 0.2);
+            border-bottom: 1px solid rgba(241, 196, 15, 0.15);
             padding-bottom: 10px;
         }
 
         /* ========== КОНТАКТЫ ========== */
         .contact-info {
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.06);
             padding: 50px 40px;
-            border-radius: 20px;
+            border-radius: 24px;
             text-align: center;
             backdrop-filter: blur(4px);
+            transition: 0.4s;
+        }
+
+        .contact-info:hover {
+            border-color: rgba(241, 196, 15, 0.2);
         }
 
         .contact-info p {
@@ -408,13 +442,16 @@
         }
 
         .contact-info a {
-            color: #f1c40f;
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             text-decoration: none;
             transition: 0.3s;
+            font-weight: 500;
         }
 
         .contact-info a:hover {
-            color: white;
+            opacity: 0.8;
             text-decoration: underline;
         }
 
@@ -435,26 +472,28 @@
             font-weight: 500;
             font-size: 15px;
             text-decoration: none;
-            transition: 0.3s;
+            transition: 0.4s;
             border: 1px solid rgba(255, 255, 255, 0.08);
             background: rgba(255, 255, 255, 0.04);
             color: white;
         }
 
         .social-btn:hover {
-            transform: translateY(-4px);
+            transform: translateY(-4px) scale(1.02);
         }
 
         .social-btn.whatsapp:hover {
             background: #25d366;
             border-color: #25d366;
             color: white;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
         }
 
         .social-btn.linkedin:hover {
             background: #0077b5;
             border-color: #0077b5;
             color: white;
+            box-shadow: 0 10px 30px rgba(0, 119, 181, 0.3);
         }
 
         .social-btn svg {
@@ -466,16 +505,18 @@
 
         /* ========== ФУТЕР ========== */
         .footer {
-            background: #060e1a;
+            background: rgba(6, 14, 26, 0.9);
             color: #6a7a8a;
             text-align: center;
             padding: 32px 0;
             font-size: 14px;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
         }
 
         .footer span {
-            color: #f1c40f;
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         /* ========== АДАПТИВ ========== */
@@ -504,7 +545,7 @@
             }
 
             .stat-item h3 {
-                font-size: 30px;
+                font-size: 32px;
             }
 
             .grid-2 {
@@ -579,29 +620,29 @@
     <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="container">
-            <h1 class="animate animate-delay-1">Reliable supply of <span>Non-Ferrous metals</span> & Ferroalloys</h1>
-            <p class="animate animate-delay-2">From Serbia to the world — trusted partners in Uzbekistan, Serbia, Kazakhstan, India, and across the European Union.</p>
-            <a href="#contacts" class="btn animate animate-delay-3">Get in touch</a>
+            <h1 class="scroll-animate">Reliable supply of <span>Non-Ferrous metals</span> & <span>Ferroalloys</span></h1>
+            <p class="scroll-animate" style="transition-delay: 0.1s;">From Serbia to the world — trusted partners in Uzbekistan, Serbia, Kazakhstan, India, and across the European Union.</p>
+            <a href="#contacts" class="btn scroll-animate" style="transition-delay: 0.2s;">Get in touch</a>
         </div>
     </section>
 
-    <!-- ===== STATS (НОВЫЙ БЛОК) ===== -->
+    <!-- ===== STATS ===== -->
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item animate animate-delay-1">
+                <div class="stat-item scroll-animate">
                     <h3>5+</h3>
                     <p>Countries Served</p>
                 </div>
-                <div class="stat-item animate animate-delay-2">
+                <div class="stat-item scroll-animate" style="transition-delay: 0.1s;">
                     <h3>2</h3>
                     <p>Product Categories</p>
                 </div>
-                <div class="stat-item animate animate-delay-3">
+                <div class="stat-item scroll-animate" style="transition-delay: 0.2s;">
                     <h3>2025</h3>
                     <p>Founded in Belgrade</p>
                 </div>
-                <div class="stat-item animate animate-delay-4">
+                <div class="stat-item scroll-animate" style="transition-delay: 0.3s;">
                     <h3>24/7</h3>
                     <p>Market Coverage</p>
                 </div>
@@ -612,16 +653,16 @@
     <!-- ===== ABOUT ===== -->
     <section class="section" id="about">
         <div class="container">
-            <h2 class="animate">About <span>the company</span></h2>
-            <p class="subtitle animate">Who we are and how we operate</p>
+            <h2 class="scroll-animate">About <span class="white-word">the company</span></h2>
+            <p class="subtitle scroll-animate" style="transition-delay: 0.05s;">Who we are and how we operate</p>
             <div class="grid-2">
-                <div class="about-text animate">
+                <div class="about-text scroll-animate">
                     <p><strong>DemID Int.DOO</strong> is a Serbian company specializing in the supply of non-ferrous metals and ferroalloys. Founded in <strong>2025</strong>, we are a young, dynamic team with a clear mission — to deliver high-quality raw materials to markets that matter.</p>
                     <p>In a short time, we have built a strong network of partners across Europe and Asia. Today, our metals are shipped to <strong>Uzbekistan, Serbia, Kazakhstan, India</strong>, and key countries within the <strong>European Union</strong> — and we are actively expanding into new markets.</p>
                     <p>Our approach is simple: reliable logistics, transparent pricing, and consistent quality. We know that in the metals industry, trust is everything. That's why every order, from the first inquiry to final delivery, is handled with precision and care.</p>
                     <p class="highlight">At DemID Int.DOO, we don't just trade metals — we build long-term partnerships based on integrity and results.</p>
                 </div>
-                <div class="badge animate">
+                <div class="badge scroll-animate" style="transition-delay: 0.15s;">
                     <h3>Founded in</h3>
                     <span class="year">2025</span>
                     <p>Young, dynamic, and already trusted by partners across 5+ countries.</p>
@@ -633,11 +674,10 @@
     <!-- ===== PRODUCTS ===== -->
     <section class="products-section" id="products">
         <div class="container">
-            <h2 class="animate">Our <span>products</span></h2>
-            <p class="subtitle animate">What we offer</p>
+            <h2 class="scroll-animate">Our <span>products</span></h2>
+            <p class="subtitle scroll-animate" style="transition-delay: 0.05s;">What we offer</p>
             <div class="products-grid">
-                <div class="product-card animate">
-                    <span class="icon">◈</span>
+                <div class="product-card metals scroll-animate" style="transition-delay: 0.1s;">
                     <h3>Non-ferrous metals</h3>
                     <div class="image-wrapper">
                         <img
@@ -648,8 +688,7 @@
                     </div>
                     <p>We offer wholesale supplies of lead, zinc, and tin. Upon request, we can arrange delivery of other types of non-ferrous metals.</p>
                 </div>
-                <div class="product-card animate">
-                    <span class="icon">▲</span>
+                <div class="product-card ferroalloys scroll-animate" style="transition-delay: 0.2s;">
                     <h3>Ferroalloys</h3>
                     <div class="image-wrapper">
                         <img
@@ -667,9 +706,9 @@
     <!-- ===== MARKETS ===== -->
     <section class="section" id="markets">
         <div class="container">
-            <h2 class="animate">Our <span>markets</span></h2>
-            <p class="subtitle animate">Where we ship our products</p>
-            <div class="markets-group animate">
+            <h2 class="scroll-animate">Our <span class="white-word">markets</span></h2>
+            <p class="subtitle scroll-animate" style="transition-delay: 0.05s;">Where we ship our products</p>
+            <div class="markets-group scroll-animate" style="transition-delay: 0.1s;">
                 <div>
                     <h4>Key Partners</h4>
                     <div class="countries">
@@ -689,18 +728,18 @@
                     </div>
                 </div>
             </div>
-            <p style="text-align:center; margin-top:45px; font-size:16px; color:#9aa7b5; font-weight:300;">
+            <p style="text-align:center; margin-top:45px; font-size:16px; color:#9aa7b5; font-weight:300;" class="scroll-animate" style="transition-delay: 0.15s;">
                 We are actively expanding into new regions. If you are looking for a reliable partner — let's talk.
             </p>
         </div>
     </section>
 
     <!-- ===== CONTACTS ===== -->
-    <section class="section" id="contacts" style="background:#0f1f33;">
+    <section class="section" id="contacts" style="background:rgba(15, 31, 51, 0.8);">
         <div class="container">
-            <h2 class="animate">Contact <span>us</span></h2>
-            <p class="subtitle animate">We are open to dialogue and new partnerships</p>
-            <div class="contact-info animate">
+            <h2 class="scroll-animate">Contact <span class="white-word">us</span></h2>
+            <p class="subtitle scroll-animate" style="transition-delay: 0.05s;">We are open to dialogue and new partnerships</p>
+            <div class="contact-info scroll-animate" style="transition-delay: 0.1s;">
                 <p><strong>Registered address:</strong> Studentski trg 4/7, Beograd (Stari Grad), Serbia</p>
                 <p><strong>PIB (Serbian Tax ID):</strong> 115015326</p>
                 <p><strong>📞 Phone:</strong> <a href="tel:+381638424900">+381 63 842 4900</a></p>
@@ -730,6 +769,26 @@
             <p>© 2026 <span>DemID Int.DOO</span> — All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        (function() {
+            const elements = document.querySelectorAll('.scroll-animate');
+
+            function checkVisibility() {
+                const windowHeight = window.innerHeight;
+                elements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < windowHeight - 60) {
+                        el.classList.add('visible');
+                    }
+                });
+            }
+
+            window.addEventListener('load', checkVisibility);
+            window.addEventListener('scroll', checkVisibility);
+            setTimeout(checkVisibility, 300);
+        })();
+    </script>
 
 </body>
 </html>
