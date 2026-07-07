@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DemID Int.DOO — Non-Ferrous metal & Ferroalloy supplies</title>
     <style>
+        /* --- ОБНУЛЕНИЕ --- */
         * {
             margin: 0;
             padding: 0;
@@ -15,10 +16,9 @@
         body {
             background: #b0b5bb;
             color: #1e1e1e;
-            line-height: 1.7;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
+            line-height: 1.6;
             min-height: 100vh;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -27,7 +27,7 @@
             padding: 0 24px;
         }
 
-        /* ========== ФОН ========== */
+        /* --- ФОН С КАРТИНКОЙ --- */
         body::before {
             content: '';
             position: fixed;
@@ -35,28 +35,17 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, #b0b5bb 0%, #c8cdd3 25%, #a0a5ab 50%, #c8cdd3 75%, #b0b5bb 100%);
+            background: 
+                linear-gradient(90deg, rgba(176, 181, 187, 0.85) 0%, rgba(200, 205, 211, 0.85) 50%, rgba(176, 181, 187, 0.85) 100%),
+                url('bg.jpg') center/cover no-repeat fixed;
             z-index: -2;
-            pointer-events: none;
         }
 
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.15);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        /* ========== АНИМАЦИЯ ========== */
+        /* --- АНИМАЦИЯ --- */
         .scroll-animate {
             opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
         }
 
         .scroll-animate.visible {
@@ -64,16 +53,15 @@
             transform: translateY(0);
         }
 
-        /* ========== ШАПКА ========== */
+        /* --- ШАПКА --- */
         .header {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(10px);
             padding: 12px 0;
             position: sticky;
             top: 0;
             z-index: 100;
             border-bottom: 1px solid rgba(4, 75, 51, 0.08);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
         }
 
         .header .container {
@@ -98,12 +86,11 @@
         .logo-text {
             font-size: 26px;
             font-weight: 300;
-            color: #1e1e1e;
         }
 
         .logo-text span {
             font-weight: 700;
-            background: linear-gradient(135deg, #044b33 0%, #097956 50%, #11a97d 100%);
+            background: linear-gradient(135deg, #044b33, #11a97d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -124,24 +111,21 @@
             color: #097956;
         }
 
-        /* ========== ГЕРОЙ ========== */
+        /* --- ГЕРОЙ --- */
         .hero {
             padding: 110px 0 80px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.15);
-            border-bottom: 1px solid rgba(4, 75, 51, 0.06);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .hero h1 {
             font-size: 48px;
             font-weight: 700;
             margin-bottom: 18px;
-            letter-spacing: -0.5px;
-            color: #1e1e1e;
         }
 
         .hero h1 span {
-            background: linear-gradient(135deg, #044b33 0%, #097956 50%, #11a97d 100%);
+            background: linear-gradient(135deg, #044b33, #11a97d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -150,14 +134,12 @@
             font-size: 20px;
             max-width: 650px;
             margin: 0 auto 35px;
-            opacity: 0.85;
-            font-weight: 300;
             color: #2c3e50;
         }
 
         .btn {
             display: inline-block;
-            background: linear-gradient(135deg, #044b33 0%, #097956 50%, #11a97d 100%);
+            background: linear-gradient(135deg, #044b33, #11a97d);
             color: white;
             padding: 14px 44px;
             font-weight: 700;
@@ -165,28 +147,25 @@
             border-radius: 50px;
             text-decoration: none;
             transition: 0.4s;
-            border: none;
-            letter-spacing: 0.5px;
             box-shadow: 0 4px 20px rgba(9, 121, 86, 0.2);
         }
 
         .btn:hover {
             transform: scale(1.04) translateY(-3px);
             box-shadow: 0 12px 35px rgba(9, 121, 86, 0.3);
-            background: linear-gradient(135deg, #033d29 0%, #076b4b 50%, #0e9b72 100%);
         }
 
-        /* ========== СТАТИСТИКА ========== */
+        /* --- СТАТИСТИКА (без 2025) --- */
         .stats {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
             padding: 50px 0;
-            border-bottom: 1px solid rgba(4, 75, 51, 0.05);
             border-top: 1px solid rgba(4, 75, 51, 0.05);
+            border-bottom: 1px solid rgba(4, 75, 51, 0.05);
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
             text-align: center;
         }
@@ -194,10 +173,9 @@
         .stat-item h3 {
             font-size: 42px;
             font-weight: 700;
-            background: linear-gradient(135deg, #044b33 0%, #097956 50%, #11a97d 100%);
+            background: linear-gradient(135deg, #044b33, #11a97d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 1px;
         }
 
         .stat-item p {
@@ -205,18 +183,12 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: #4a5a66;
-            margin-top: 6px;
-            font-weight: 400;
         }
 
-        /* ========== О НАС ========== */
+        /* --- О НАС --- */
         .section {
             padding: 90px 0;
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .section:nth-child(even) {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .section h2 {
@@ -224,30 +196,27 @@
             font-weight: 300;
             text-align: center;
             margin-bottom: 14px;
-            color: #1e1e1e;
-            letter-spacing: -0.3px;
         }
 
         .section h2 span {
-            background: linear-gradient(135deg, #044b33 0%, #097956 50%, #11a97d 100%);
+            background: linear-gradient(135deg, #044b33, #11a97d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 600;
         }
 
-        .section h2 .white-word {
+        .section .white-word {
             color: #1e1e1e;
             -webkit-text-fill-color: #1e1e1e;
             font-weight: 300;
         }
 
-        .section .subtitle {
+        .subtitle {
             text-align: center;
             font-size: 17px;
             color: #4a5a66;
             margin-bottom: 55px;
             font-weight: 300;
-            letter-spacing: 0.3px;
         }
 
         .grid-2 {
@@ -259,12 +228,11 @@
 
         .about-text {
             font-size: 17px;
-            line-height: 1.9;
             color: #1e1e1e;
         }
 
         .about-text strong {
-            background: linear-gradient(135deg, #044b33 0%, #097956 50%, #11a97d 100%);
+            background: linear-gradient(135deg, #044b33, #11a97d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 600;
@@ -274,34 +242,34 @@
             margin-bottom: 18px;
         }
 
-        .about-text .highlight {
+        .highlight {
             font-style: italic;
             border-left: 3px solid #11a97d;
             padding-left: 20px;
-            font-weight: 400;
-            background: linear-gradient(135deg, #044b33 0%, #097956 50%, #11a97d 100%);
+            background: linear-gradient(135deg, #044b33, #11a97d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
+        /* --- ПЛАШКА "OUR MISSION" (МЕТАЛЛИЧЕСКАЯ) --- */
         .badge {
-            background: rgba(255, 255, 255, 0.6);
-            border: 1px solid rgba(4, 75, 51, 0.06);
-            padding: 35px 30px;
+            background: linear-gradient(145deg, rgba(180, 185, 190, 0.4), rgba(130, 135, 140, 0.2));
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 40px 30px;
             border-radius: 20px;
             text-align: center;
-            backdrop-filter: blur(4px);
-            transition: 0.4s;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 15px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            transition: 0.4s;
         }
 
         .badge:hover {
             border-color: #11a97d;
-            box-shadow: 0 12px 40px rgba(9, 121, 86, 0.06);
+            box-shadow: 0 12px 40px rgba(9, 121, 86, 0.08);
         }
 
         .badge .badge-logo {
@@ -314,7 +282,7 @@
             font-size: 22px;
             font-weight: 300;
             letter-spacing: 1px;
-            background: linear-gradient(135deg, #044b33 0%, #097956 50%, #11a97d 100%);
+            background: linear-gradient(135deg, #044b33, #11a97d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -322,15 +290,19 @@
         .badge p {
             color: #2c3e50;
             font-size: 16px;
-            font-weight: 300;
             max-width: 280px;
             margin: 0 auto;
         }
 
-        /* ========== ПРОДУКТЫ ========== */
+        /* --- ПРОДУКТЫ --- */
         .products-section {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
             padding: 90px 0;
+        }
+
+        .products-section h2,
+        .products-section .subtitle {
+            text-align: center;
         }
 
         .products-grid {
@@ -341,44 +313,37 @@
         }
 
         .product-card {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
             border: 1px solid rgba(4, 75, 51, 0.05);
             border-radius: 24px;
             padding: 32px 28px;
-            transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-            backdrop-filter: blur(4px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
             text-align: center;
+            transition: 0.4s;
         }
 
         .product-card:hover {
             border-color: rgba(17, 169, 125, 0.2);
+            transform: translateY(-6px);
             box-shadow: 0 20px 50px rgba(9, 121, 86, 0.06);
-            transform: translateY(-8px);
         }
 
         .product-card h3 {
             font-size: 24px;
             font-weight: 600;
-            color: #1e1e1e;
             margin-bottom: 16px;
-            letter-spacing: 0.3px;
-        }
-
-        .product-card h3 {
-            background: linear-gradient(135deg, #044b33 0%, #097956 50%, #11a97d 100%);
+            background: linear-gradient(135deg, #044b33, #11a97d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .product-card .image-wrapper {
             width: 100%;
-            aspect-ratio: 4 / 3;
+            aspect-ratio: 4/3;
             overflow: hidden;
             border-radius: 14px;
             margin: 12px 0 16px;
             background: rgba(0, 0, 0, 0.03);
-            border: 1px solid rgba(4, 75, 51, 0.03);
         }
 
         .product-card .image-wrapper img {
@@ -386,20 +351,14 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: 0.8s ease;
-        }
-
-        .product-card:hover .image-wrapper img {
-            transform: scale(1.04);
         }
 
         .product-card p {
             font-size: 15px;
             color: #2c3e50;
-            line-height: 1.7;
         }
 
-        /* ========== РЫНКИ ========== */
+        /* --- РЫНКИ --- */
         .countries {
             display: flex;
             flex-wrap: wrap;
@@ -409,7 +368,8 @@
         }
 
         .country-item {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
             color: #1e1e1e;
             padding: 12px 30px;
             border-radius: 40px;
@@ -417,16 +377,12 @@
             font-size: 16px;
             border: 1px solid rgba(4, 75, 51, 0.06);
             transition: 0.4s;
-            letter-spacing: 0.3px;
-            cursor: default;
-            backdrop-filter: blur(4px);
         }
 
         .country-item:hover {
-            background: linear-gradient(135deg, #044b33 0%, #097956 50%, #11a97d 100%);
+            background: linear-gradient(135deg, #044b33, #11a97d);
             color: white;
             transform: scale(1.04);
-            box-shadow: 0 8px 25px rgba(9, 121, 86, 0.1);
         }
 
         .markets-group {
@@ -440,7 +396,7 @@
         .markets-group h4 {
             text-align: center;
             font-size: 16px;
-            background: linear-gradient(135deg, #044b33 0%, #097956 50%, #11a97d 100%);
+            background: linear-gradient(135deg, #044b33, #11a97d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 18px;
@@ -451,21 +407,14 @@
             padding-bottom: 10px;
         }
 
-        /* ========== КОНТАКТЫ ========== */
+        /* --- КОНТАКТЫ (С НАДПИСЯМИ НА КНОПКАХ) --- */
         .contact-info {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(6px);
             border: 1px solid rgba(4, 75, 51, 0.04);
             padding: 50px 40px;
             border-radius: 24px;
             text-align: center;
-            backdrop-filter: blur(4px);
-            transition: 0.4s;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-        }
-
-        .contact-info:hover {
-            border-color: rgba(17, 169, 125, 0.15);
-            box-shadow: 0 12px 40px rgba(9, 121, 86, 0.05);
         }
 
         .contact-info p {
@@ -475,17 +424,11 @@
         }
 
         .contact-info a {
-            background: linear-gradient(135deg, #044b33 0%, #097956 50%, #11a97d 100%);
+            background: linear-gradient(135deg, #044b33, #11a97d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
-            transition: 0.3s;
             font-weight: 500;
-        }
-
-        .contact-info a:hover {
-            opacity: 0.7;
-            text-decoration: underline;
         }
 
         .social-buttons {
@@ -505,15 +448,15 @@
             font-weight: 600;
             font-size: 16px;
             text-decoration: none;
-            transition: 0.4s;
-            border: 1px solid rgba(4, 75, 51, 0.06);
-            background: rgba(255, 255, 255, 0.6);
-            color: #1e1e1e;
+            transition: 0.3s;
+            border: 1px solid rgba(4, 75, 51, 0.08);
+            background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(4px);
+            color: #1e1e1e;
         }
 
         .social-btn:hover {
-            transform: translateY(-4px) scale(1.02);
+            transform: translateY(-3px);
             color: white;
         }
 
@@ -525,7 +468,6 @@
 
         .social-btn.whatsapp:hover {
             background: #20b85a;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.2);
         }
 
         .social-btn.linkedin {
@@ -536,7 +478,6 @@
 
         .social-btn.linkedin:hover {
             background: #005e8c;
-            box-shadow: 0 10px 30px rgba(0, 119, 181, 0.2);
         }
 
         .social-btn svg {
@@ -546,10 +487,10 @@
             flex-shrink: 0;
         }
 
-        /* ========== ФУТЕР ========== */
+        /* --- ФУТЕР --- */
         .footer {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(6px);
             color: #4a5a66;
             text-align: center;
             padding: 32px 0;
@@ -558,12 +499,12 @@
         }
 
         .footer span {
-            background: linear-gradient(135deg, #044b33 0%, #097956 50%, #11a97d 100%);
+            background: linear-gradient(135deg, #044b33, #11a97d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* ========== АДАПТИВ ========== */
+        /* --- АДАПТИВ --- */
         @media (max-width: 768px) {
             .header .container {
                 flex-direction: column;
@@ -596,21 +537,9 @@
                 gap: 20px;
             }
 
-            .stat-item h3 {
-                font-size: 32px;
-            }
-
             .grid-2 {
                 grid-template-columns: 1fr;
                 gap: 30px;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .section h2 {
-                font-size: 28px;
             }
 
             .products-grid {
@@ -618,17 +547,9 @@
                 gap: 30px;
             }
 
-            .product-card {
-                padding: 24px 20px;
-            }
-
             .markets-group {
                 flex-direction: column;
                 gap: 30px;
-            }
-
-            .contact-info {
-                padding: 30px 20px;
             }
 
             .social-buttons {
@@ -656,7 +577,7 @@
 </head>
 <body>
 
-    <!-- ===== HEADER ===== -->
+    <!-- ШАПКА -->
     <header class="header">
         <div class="container">
             <div class="logo-wrapper">
@@ -672,7 +593,7 @@
         </div>
     </header>
 
-    <!-- ===== HERO ===== -->
+    <!-- ГЕРОЙ -->
     <section class="hero">
         <div class="container">
             <h1 class="scroll-animate">Reliable supply of <span>Non-Ferrous metals</span> & <span>Ferroalloys</span></h1>
@@ -681,7 +602,7 @@
         </div>
     </section>
 
-    <!-- ===== STATS ===== -->
+    <!-- СТАТИСТИКА (БЕЗ 2025) -->
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
@@ -694,10 +615,6 @@
                     <p>Product Categories</p>
                 </div>
                 <div class="stat-item scroll-animate" style="transition-delay: 0.2s;">
-                    <h3>2025</h3>
-                    <p>Founded in Belgrade</p>
-                </div>
-                <div class="stat-item scroll-animate" style="transition-delay: 0.3s;">
                     <h3>24/7</h3>
                     <p>Market Coverage</p>
                 </div>
@@ -705,7 +622,7 @@
         </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
+    <!-- О НАС -->
     <section class="section" id="about">
         <div class="container">
             <h2 class="scroll-animate">About <span class="white-word">the company</span></h2>
@@ -726,7 +643,7 @@
         </div>
     </section>
 
-    <!-- ===== PRODUCTS ===== -->
+    <!-- ПРОДУКТЫ -->
     <section class="products-section" id="products">
         <div class="container">
             <h2 class="scroll-animate">Our <span>products</span></h2>
@@ -737,7 +654,7 @@
                     <div class="image-wrapper">
                         <img
                             src="https://cdn.leonardo.ai/users/6543f188-6a1d-4bce-aa99-9ed4f0994247/generations/1f1793e9-69ea-6a70-ab99-7fa351ff0fb3/lucid-origin_A_massive_stack_of_shiny_silver_metal_ingots_arranged_neatly_on_a_wooden_pallet_-0.jpg"
-                            alt="Non-ferrous metals — silver ingots"
+                            alt="Non-ferrous metals"
                             loading="lazy"
                         />
                     </div>
@@ -748,7 +665,7 @@
                     <div class="image-wrapper">
                         <img
                             src="https://cdn.leonardo.ai/users/6543f188-6a1d-4bce-aa99-9ed4f0994247/generations/1f1793ef-9ea4-6850-b5c7-27ad4e170dab/lucid-origin_A_large_industrial_pile_of_dark_grey_and_black_ferroalloy_lumps_jagged_and_irreg-0.jpg"
-                            alt="Ferroalloys — industrial pile"
+                            alt="Ferroalloys"
                             loading="lazy"
                         />
                     </div>
@@ -758,7 +675,7 @@
         </div>
     </section>
 
-    <!-- ===== MARKETS ===== -->
+    <!-- РЫНКИ -->
     <section class="section" id="markets">
         <div class="container">
             <h2 class="scroll-animate">Our <span class="white-word">markets</span></h2>
@@ -783,14 +700,14 @@
                     </div>
                 </div>
             </div>
-            <p style="text-align:center; margin-top:45px; font-size:16px; color:#4a5a66; font-weight:300;" class="scroll-animate" style="transition-delay: 0.15s;">
+            <p style="text-align:center; margin-top:45px; font-size:16px; color:#4a5a66;" class="scroll-animate" style="transition-delay: 0.15s;">
                 We are actively expanding into new regions. If you are looking for a reliable partner — let's talk.
             </p>
         </div>
     </section>
 
-    <!-- ===== CONTACTS ===== -->
-    <section class="section" id="contacts" style="background:rgba(255, 255, 255, 0.1);">
+    <!-- КОНТАКТЫ -->
+    <section class="section" id="contacts" style="background: rgba(255, 255, 255, 0.05);">
         <div class="container">
             <h2 class="scroll-animate">Contact <span class="white-word">us</span></h2>
             <p class="subtitle scroll-animate" style="transition-delay: 0.05s;">We are open to dialogue and new partnerships</p>
@@ -821,7 +738,7 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- ФУТЕР -->
     <footer class="footer">
         <div class="container">
             <p>© 2026 <span>DemID Int.DOO</span> — All rights reserved.</p>
@@ -831,20 +748,15 @@
     <script>
         (function() {
             const elements = document.querySelectorAll('.scroll-animate');
-
-            function checkVisibility() {
-                const windowHeight = window.innerHeight;
-                elements.forEach(el => {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top < windowHeight - 60) {
-                        el.classList.add('visible');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
                     }
                 });
-            }
+            }, { threshold: 0.1 });
 
-            window.addEventListener('load', checkVisibility);
-            window.addEventListener('scroll', checkVisibility);
-            setTimeout(checkVisibility, 300);
+            elements.forEach(el => observer.observe(el));
         })();
     </script>
 
