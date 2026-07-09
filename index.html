@@ -324,11 +324,12 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             margin-top: 20px;
         }
 
+        /* --- КАРТОЧКИ: ОДИНАКОВАЯ ВЫСОТА, КАРТИНКИ НА ОДНОМ УРОВНЕ, ТЕКСТ ПРИЖАТ К НИЗУ --- */
         .product-card {
             background: rgba(180, 185, 190, 0.3);
             backdrop-filter: blur(6px);
@@ -338,6 +339,10 @@
             text-align: center;
             transition: 0.4s;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
         }
 
         .product-card:hover {
@@ -364,6 +369,7 @@
             margin: 12px 0 16px;
             background: rgba(0, 0, 0, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.05);
+            flex-shrink: 0;
         }
 
         .product-card .image-wrapper img {
@@ -377,6 +383,7 @@
             font-size: 15px;
             color: #ffffff;
             text-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            margin-top: auto;
         }
 
         .countries {
@@ -601,6 +608,11 @@
                 grid-template-columns: 1fr;
                 gap: 16px;
             }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
         }
     </style>
 </head>
@@ -700,13 +712,13 @@
                     <p>We offer copper sulfate, zinc sulfate, and other specialty chemicals for industrial and agricultural applications.</p>
                 </div>
 
-                <!-- 4. Technology & Rare Earth Metals -->
+                <!-- 4. Technology & Rare Earth Metals (шрифт уменьшен) -->
                 <div class="product-card scroll-animate" style="transition-delay: 0.4s;">
-                    <h3>Technology &amp; Rare Earth Metals</h3>
+                    <h3><p style="font-size: 19.5px; line-height: 2;">Technology &amp; Rare Earth Metals</p></h3>
                     <div class="image-wrapper">
                         <img src="https://cdn.leonardo.ai/users/6543f188-6a1d-4bce-aa99-9ed4f0994247/generations/1f17b68d-164b-6790-95e0-e6f437f05234/lucid-origin_Pure_bismuth_metal_crystals_rainbow_iridescent_surface_with_blue_yellow_and_gree-0.jpg" alt="Rare earth metals" loading="lazy" />
                     </div>
-                    <p>We supply antimony, indium, chromium, bismuth, arsenic, and other critical metals for high-tech and industrial applications.</p>
+                    <p style="font-size: 16px; line-height: 1.5;">We supply antimony, indium, chromium, bismuth, arsenic, and other critical metals for high-tech and industrial applications.</p>
                 </div>
 
                 <!-- 5. Copper Products -->
