@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DemID Int.DOO — Non-Ferrous metal & Ferroalloy supplies</title>
+    <title>DemID Int.DOO — Industrial & Specialty Supply</title>
     <style>
         * {
             margin: 0;
@@ -26,7 +26,6 @@
             padding: 0 24px;
         }
 
-        /* --- ФОН (ТЕМНЕЕ) --- */
         body::before {
             content: '';
             position: fixed;
@@ -51,7 +50,6 @@
             transform: translateY(0);
         }
 
-        /* --- ШАПКА --- */
         .header {
             background: rgba(180, 185, 190, 0.4);
             backdrop-filter: blur(10px);
@@ -91,7 +89,7 @@
 
         .logo-text span {
             font-weight: 700;
-            background: linear-gradient(135deg, #044b33, #11a97d);
+            background: linear-gradient(135deg, #2c5f7a, #1d4a63);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: none;
@@ -110,11 +108,10 @@
         }
 
         .nav a:hover {
-            border-bottom-color: #11a97d;
-            color: #11a97d;
+            border-bottom-color: #2c5f7a;
+            color: #2c5f7a;
         }
 
-        /* --- ГЕРОЙ --- */
         .hero {
             padding: 110px 0 80px;
             text-align: center;
@@ -130,7 +127,7 @@
         }
 
         .hero h1 span {
-            background: linear-gradient(135deg, #044b33, #11a97d);
+            background: linear-gradient(135deg, #2c5f7a, #1d4a63);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: none;
@@ -146,7 +143,7 @@
 
         .btn {
             display: inline-block;
-            background: linear-gradient(135deg, #044b33, #11a97d);
+            background: linear-gradient(135deg, #2c5f7a, #1d4a63);
             color: white;
             padding: 14px 44px;
             font-weight: 700;
@@ -154,15 +151,15 @@
             border-radius: 50px;
             text-decoration: none;
             transition: 0.4s;
-            box-shadow: 0 4px 20px rgba(9, 121, 86, 0.2);
+            box-shadow: 0 4px 20px rgba(44, 95, 122, 0.2);
         }
 
         .btn:hover {
             transform: scale(1.04) translateY(-3px);
-            box-shadow: 0 12px 35px rgba(9, 121, 86, 0.3);
+            box-shadow: 0 12px 35px rgba(44, 95, 122, 0.3);
+            background: linear-gradient(135deg, #1d4a63, #153a4f);
         }
 
-        /* --- СТАТИСТИКА (ВСЕ ТРИ СТОЛБИКА НА ОДНОМ УРОВНЕ) --- */
         .stats {
             background: rgba(180, 185, 190, 0.3);
             backdrop-filter: blur(4px);
@@ -183,7 +180,7 @@
         .stat-item h3 {
             font-size: 42px;
             font-weight: 700;
-            background: linear-gradient(135deg, #044b33, #11a97d);
+            background: linear-gradient(135deg, #2c5f7a, #1d4a63);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 4px;
@@ -198,7 +195,6 @@
             margin-top: 0;
         }
 
-        /* --- О НАС --- */
         .section {
             padding: 90px 0;
             background: rgba(255, 255, 255, 0.08);
@@ -214,7 +210,7 @@
         }
 
         .section h2 span {
-            background: linear-gradient(135deg, #044b33, #11a97d);
+            background: linear-gradient(135deg, #2c5f7a, #1d4a63);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 600;
@@ -251,7 +247,7 @@
         }
 
         .about-text strong {
-            background: linear-gradient(135deg, #044b33, #11a97d);
+            background: linear-gradient(135deg, #2c5f7a, #1d4a63);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 600;
@@ -264,15 +260,14 @@
 
         .highlight {
             font-style: italic;
-            border-left: 3px solid #11a97d;
+            border-left: 3px solid #2c5f7a;
             padding-left: 20px;
-            background: linear-gradient(135deg, #044b33, #11a97d);
+            background: linear-gradient(135deg, #2c5f7a, #1d4a63);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: none;
         }
 
-        /* --- ПЛАШКА "OUR MISSION" (ЛОГОТИП УВЕЛИЧЕН) --- */
         .badge {
             background: linear-gradient(145deg, rgba(180, 185, 190, 0.4), rgba(130, 135, 140, 0.2));
             backdrop-filter: blur(6px);
@@ -289,8 +284,8 @@
         }
 
         .badge:hover {
-            border-color: #11a97d;
-            box-shadow: 0 12px 40px rgba(9, 121, 86, 0.08);
+            border-color: #2c5f7a;
+            box-shadow: 0 12px 40px rgba(44, 95, 122, 0.08);
         }
 
         .badge .badge-logo {
@@ -303,7 +298,7 @@
             font-size: 22px;
             font-weight: 300;
             letter-spacing: 1px;
-            background: linear-gradient(135deg, #044b33, #11a97d);
+            background: linear-gradient(135deg, #2c5f7a, #1d4a63);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: none;
@@ -346,7 +341,7 @@
         }
 
         .product-card:hover {
-            border-color: rgba(17, 169, 125, 0.3);
+            border-color: rgba(44, 95, 122, 0.3);
             transform: translateY(-6px);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
         }
@@ -355,7 +350,7 @@
             font-size: 24px;
             font-weight: 600;
             margin-bottom: 16px;
-            background: linear-gradient(135deg, #044b33, #11a97d);
+            background: linear-gradient(135deg, #2c5f7a, #1d4a63);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: none;
@@ -408,12 +403,12 @@
         }
 
         .country-item:hover {
-            background: linear-gradient(135deg, #044b33, #11a97d);
+            background: linear-gradient(135deg, #2c5f7a, #1d4a63);
             color: white;
             transform: scale(1.04);
             text-shadow: none;
-            border-color: rgba(17, 169, 125, 0.4);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border-color: rgba(44, 95, 122, 0.4);
+            box-shadow: 0 8px 25px rgba(44, 95, 122, 0.08);
         }
 
         .markets-group {
@@ -427,14 +422,14 @@
         .markets-group h4 {
             text-align: center;
             font-size: 16px;
-            background: linear-gradient(135deg, #044b33, #11a97d);
+            background: linear-gradient(135deg, #2c5f7a, #1d4a63);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 18px;
             font-weight: 400;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            border-bottom: 1px solid rgba(4, 75, 51, 0.06);
+            border-bottom: 1px solid rgba(44, 95, 122, 0.06);
             padding-bottom: 10px;
             text-shadow: none;
         }
@@ -457,7 +452,7 @@
         }
 
         .contact-info a {
-            background: linear-gradient(135deg, #044b33, #11a97d);
+            background: linear-gradient(135deg, #2c5f7a, #1d4a63);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
@@ -486,7 +481,6 @@
             text-decoration: none;
             transition: 0.3s;
             border: 1px solid rgba(255,255,255,0.2);
-            
             color: #ffffff !important; 
             background-clip: unset !important;
             -webkit-background-clip: unset !important;
@@ -533,7 +527,7 @@
         }
 
         .footer span {
-            background: linear-gradient(135deg, #044b33, #11a97d);
+            background: linear-gradient(135deg, #2c5f7a, #1d4a63);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: none;
@@ -629,7 +623,7 @@
 
     <section class="hero">
         <div class="container">
-            <h1 class="scroll-animate">Reliable supply of <span>Non-Ferrous metals</span> & <span>Ferroalloys</span></h1>
+            <h1 class="scroll-animate">Reliable supply of <span>Non-Ferrous metals</span> &amp; <span>Ferroalloys</span></h1>
             <p class="scroll-animate" style="transition-delay: 0.1s;">From Serbia to the world — trusted partners in Uzbekistan, Serbia, Kazakhstan, India, and across the European Union.</p>
             <a href="#contacts" class="btn scroll-animate" style="transition-delay: 0.2s;">Get in touch</a>
         </div>
@@ -643,7 +637,7 @@
                     <p>Countries Served</p>
                 </div>
                 <div class="stat-item scroll-animate" style="transition-delay: 0.1s;">
-                    <h3 style="font-size: 28px; margin-bottom: 4px;">Non-Ferrous &amp; Ferroalloys</h3>
+                    <h3 style="font-size: 28px; margin-bottom: 4px;">Industrial &amp; Specialty</h3>
                     <p>Supply</p>
                 </div>
                 <div class="stat-item scroll-animate" style="transition-delay: 0.2s;">
@@ -660,10 +654,10 @@
             <p class="subtitle scroll-animate" style="transition-delay: 0.05s;">Who we are and how we operate</p>
             <div class="grid-2">
                 <div class="about-text scroll-animate">
-                    <p><strong>DemID Int.DOO</strong> is a Serbian company specializing in the supply of non-ferrous metals and ferroalloys. Our team consists of experienced professionals with many years of expertise in the metals and mining industry. We combine deep market knowledge with a dynamic, client-focused approach to deliver exceptional value.</p>
-                    <p>We have built a strong network of partners across Europe and Asia. Today, our metals are shipped to <strong>Uzbekistan, Serbia, Kazakhstan, India</strong>, and key countries within the <strong>European Union</strong> — and we are actively expanding into new markets.</p>
-                    <p>Our approach is simple: reliable logistics, transparent pricing, and consistent quality. We know that in the metals industry, trust is everything. That's why every order, from the first inquiry to final delivery, is handled with precision and care.</p>
-                    <p class="highlight">At DemID Int.DOO, we don't just trade metals — we build long-term partnerships based on integrity and results.</p>
+                    <p><strong>DemID Int.DOO</strong> is a Serbian company specializing in the supply of non-ferrous metals, ferroalloys, specialty chemicals, and technology metals. Our team consists of experienced professionals with many years of expertise in the metals and mining industry. We combine deep market knowledge with a dynamic, client-focused approach to deliver exceptional value.</p>
+                    <p>We have built a strong network of partners across Europe and Asia. Today, our products are shipped to <strong>Uzbekistan, Serbia, Kazakhstan, India</strong>, and key countries within the <strong>European Union</strong> — and we are actively expanding into new markets.</p>
+                    <p>Our approach is simple: reliable logistics, transparent pricing, and consistent quality. We know that in this industry, trust is everything. That's why every order, from the first inquiry to final delivery, is handled with precision and care.</p>
+                    <p class="highlight">At DemID Int.DOO, we don't just trade — we build long-term partnerships based on integrity and results.</p>
                 </div>
                 <div class="badge scroll-animate" style="transition-delay: 0.15s;">
                     <img src="logonew.png" alt="DemID Logo" class="badge-logo" />
@@ -686,12 +680,29 @@
                     </div>
                     <p>We offer wholesale supplies of lead, zinc, and tin. Upon request, we can arrange delivery of other types of non-ferrous metals.</p>
                 </div>
+
                 <div class="product-card scroll-animate" style="transition-delay: 0.2s;">
                     <h3>Ferroalloys</h3>
                     <div class="image-wrapper">
                         <img src="https://cdn.leonardo.ai/users/6543f188-6a1d-4bce-aa99-9ed4f0994247/generations/1f1793ef-9ea4-6850-b5c7-27ad4e170dab/lucid-origin_A_large_industrial_pile_of_dark_grey_and_black_ferroalloy_lumps_jagged_and_irreg-0.jpg" alt="Ferroalloys" loading="lazy" />
                     </div>
-                    <p>We supply high-quality ferroalloys for the metallurgical industry: ferrosilicon, ferromanganese, ferrochrome. We ensure stable volumes and consistent quality.</p>
+                    <p>We supply high-quality ferroalloys for the metallurgical industry: ferrosilicon, ferromanganese, ferrochrome, and ferrotungsten. We ensure stable volumes and consistent quality.</p>
+                </div>
+
+                <div class="product-card scroll-animate" style="transition-delay: 0.3s;">
+                    <h3>Specialty Chemicals</h3>
+                    <div class="image-wrapper">
+                        <img src="https://cdn.leonardo.ai/users/6543f188-6a1d-4bce-aa99-9ed4f0994247/generations/1f17b681-d0b6-6fa0-9e7f-813ab4f00b95/lucid-origin_Fine_blue_copper_sulfate_powder_neatly_piled_inside_a_transparent_glass_Petri_di-0.jpg" alt="Specialty chemicals" loading="lazy" />
+                    </div>
+                    <p>We offer copper powder, copper sulfate, zinc sulfate, and copper wire. Tailored solutions for industrial and agricultural applications.</p>
+                </div>
+
+                <div class="product-card scroll-animate" style="transition-delay: 0.4s;">
+                    <h3>Technology &amp; Rare Earth Metals</h3>
+                    <div class="image-wrapper">
+                        <img src="https://cdn.leonardo.ai/users/6543f188-6a1d-4bce-aa99-9ed4f0994247/generations/1f17b68d-164b-6790-95e0-e6f437f05234/lucid-origin_Pure_bismuth_metal_crystals_rainbow_iridescent_surface_with_blue_yellow_and_gree-0.jpg" alt="Rare earth metals" loading="lazy" />
+                    </div>
+                    <p>We supply antimony, indium, chromium, bismuth, arsenic, and other critical metals for high-tech and industrial applications.</p>
                 </div>
             </div>
         </div>
